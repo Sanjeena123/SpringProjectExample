@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="organization" class="entity.Organization">
+        <constructor-arg ref="customer"/>
+    </bean>
+
+    <bean id="customer" class="entity.Customer">
+        <constructor-arg ref="product"/>
+        <constructor-arg ref="customerDetails"/>
+    </bean>
+
+    <bean id="product" class="entity.Product">
+        <constructor-arg ref="productDetails"/>
+
+    </bean>
+    <bean id="customerDetails" class="entity.CustomerDetails">
+        <constructor-arg name="customerName" value="radha"/>
+
+
+    </bean>
+    <bean id="productDetails" class="entity.ProductDetails">
+
+    </bean>
+
+</beans>
